@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
 class Gif extends Component {
-  updateClick = () => {
-    console.log('accessing..')
+  updateClick = () => {     
     if (this.props.handleClick) {
       this.props.handleClick(this.props.id)
     }
-    console.log('done..')
   }
 
   render() {

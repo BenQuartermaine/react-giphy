@@ -10,10 +10,16 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: "vbD9OoDgUOpkk"
+      selectedGifId: "l3V0doGbp2EDaLHJC"
     };
     this.search('beyonce')
+
+    // setInterval(() => {
+    //   alert('Annoying!')
+    // }, 5000);
   }
+
+
   
   search = (query) => {
     giphy('vYS3kwDnk3EQFMPtucA1tmfY6gXSVFwi').search({
