@@ -13,13 +13,7 @@ class App extends Component {
       selectedGifId: "l3V0doGbp2EDaLHJC"
     };
     this.search('beyonce')
-
-    // setInterval(() => {
-    //   alert('Annoying!')
-    // }, 5000);
   }
-
-
   
   search = (query) => {
     giphy('vYS3kwDnk3EQFMPtucA1tmfY6gXSVFwi').search({
