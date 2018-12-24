@@ -16,7 +16,7 @@ class App extends Component {
   }
   
   search = (query) => {
-    giphy('vYS3kwDnk3EQFMPtucA1tmfY6gXSVFwi').search({
+    giphy({ apiKey: 'vYS3kwDnk3EQFMPtucA1tmfY6gXSVFwi', https: true}).search({
         q: query,
         rating: 'g',
         limit: 20
@@ -26,6 +26,7 @@ class App extends Component {
       })
     });
   }
+
 
   handleClick = (id) => {
     this.setState({
