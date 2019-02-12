@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "babel": "^6.23.0",
-    "babel-eslint": "^10.0.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
@@ -23,5 +22,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.0.0"
+  }
 }
