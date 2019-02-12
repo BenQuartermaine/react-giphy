@@ -11,7 +11,7 @@ class GifList extends Component {
       <div className="gif-list">
         {this.renderList()}
       </div>
-    );
-  }
+    )
+  };
 }
 export default GifList;
