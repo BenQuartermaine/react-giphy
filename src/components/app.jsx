@@ -1,54 +1,33 @@
-import React, { Component } from "react";
-import SearchBar from './search_bar.jsx'
-import Gif from './gif.jsx'
-import GifList from './gif_list.jsx'
+import React, { Component } from 'react';
+import SearchBar from '../containers/search_bar'
+import Gif from '../containers/gif'
+import GifList from '../containers/gif_list'
 import giphy from 'giphy-api'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      gifs: [],
-      selectedGifId: '11wsZr0jbXc15m'
-    };
-    this.search('beyonce')
-  }
-  
-  search = (query) => {
-    giphy({ apiKey: 'vYS3kwDnk3EQFMPtucA1tmfY6gXSVFwi', https: true}).search({
-        q: query,
-        rating: 'g',
-        limit: 20
-    }, (err, res) => {
-      this.setState({
-        gifs: res.data
-      })
-    });
-  }
-
-
-  handleClick = (id) => {
-    this.setState({
-      selectedGifId: id
-    });
-  }
-
   render() {
     return (
       <div>
         <div className="left-scene">
           <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
-            <Gif id={this.state.selectedGifId} /> 
+            <Gif id={this.props.selectedGif} /> 
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} handleClick={this.handleClick} />
+          <GifList handleClick={this.handleClick} />
         </div>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    selectedGif: state.selectedGif
+  }
+}
+
+export default connect(mapStateToProps, null)(App);
